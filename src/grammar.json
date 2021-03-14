@@ -1,5 +1,5 @@
 {
-  "name": "html",
+  "name": "xml",
   "rules": {
     "fragment": {
       "type": "REPEAT",
@@ -448,7 +448,6 @@
     }
   ],
   "conflicts": [],
-  "precedences": [],
   "externals": [
     {
       "type": "SYMBOL",

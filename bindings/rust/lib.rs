@@ -1,4 +1,4 @@
-//! This crate provides html language support for the [tree-sitter][] parsing library.
+//! This crate provides xml language support for the [tree-sitter][] parsing library.
 //!
 //! Typically, you will use the [language][language func] function to add this language to a
 //! tree-sitter [Parser][], and then use the parser to parse some code:
@@ -6,26 +6,26 @@
 //! ```
 //! let code = "";
 //! let mut parser = tree_sitter::Parser::new();
-//! parser.set_language(tree_sitter_html::language()).expect("Error loading html grammar");
+//! parser.set_language(tree_sitter_xml::language()).expect("Error loading xml grammar");
 //! let tree = parser.parse(code, None).unwrap();
 //! ```
 //!
-//! [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
-//! [language func]: fn.language.html
-//! [Parser]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Parser.html
+//! [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.xml
+//! [language func]: fn.language.xml
+//! [Parser]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Parser.xml
 //! [tree-sitter]: https://tree-sitter.github.io/
 
 use tree_sitter::Language;
 
 extern "C" {
-    fn tree_sitter_html() -> Language;
+    fn tree_sitter_xml() -> Language;
 }
 
 /// Get the tree-sitter [Language][] for this grammar.
 ///
-/// [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
+/// [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.xml
 pub fn language() -> Language {
-    unsafe { tree_sitter_html() }
+    unsafe { tree_sitter_xml() }
 }
 
 /// The content of the [`node-types.json`][] file for this grammar.
@@ -47,6 +47,6 @@ mod tests {
         let mut parser = tree_sitter::Parser::new();
         parser
             .set_language(super::language())
-            .expect("Error loading html language");
+            .expect("Error loading xml language");
     }
 }

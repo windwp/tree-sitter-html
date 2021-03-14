@@ -1,5 +1,5 @@
 module.exports = grammar({
-  name: 'html',
+  name: 'xml',
 
   extras: $ => [
     $.comment,

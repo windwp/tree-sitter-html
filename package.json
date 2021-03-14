@@ -1,7 +1,7 @@
 {
-  "name": "tree-sitter-html",
+  "name": "tree-sitter-xml",
   "version": "0.19.0",
-  "description": "HTML grammar for tree-sitter",
+  "description": "xml grammar for tree-sitter",
   "main": "bindings/node",
   "keywords": [
     "parser",
@@ -16,19 +16,19 @@
     "nan": "^2.14.0"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.19.1"
+    "tree-sitter-cli": "^0.18.0"
   },
   "scripts": {
-    "test": "tree-sitter test && tree-sitter parse examples/*.html --quiet --time",
+    "test": "tree-sitter test && tree-sitter parse examples/*.xml --quiet --time",
     "test-windows": "tree-sitter test"
   },
   "tree-sitter": [
     {
-      "scope": "text.html.basic",
+      "scope": "text.xml.basic",
       "file-types": [
-        "html"
+        "xml"
       ],
-      "injection-regex": "html"
+      "injection-regex": "xml"
     }
   ]
 }
